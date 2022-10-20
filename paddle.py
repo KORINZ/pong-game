@@ -1,25 +1,20 @@
-from turtle import Turtle, Screen
-
-UP = 180
-DOWN = 0
+from turtle import Turtle
 
 
-class Paddle:
-    def __init__(self):
-        self.paddle = None
+class Paddle(Turtle):
 
-    def create_paddle(self):
-        new_paddle = Turtle("square")  # starts with 20 x 20 pixels
-        new_paddle.color("white")
-        new_paddle.penup()
-        new_paddle.turtlesize(stretch_wid=5, stretch_len=1)
-        new_paddle.goto(350, 0)
-        self.paddle = new_paddle
+    def __init__(self, position):
+        super().__init__()
+        self.shape("square")  # starts with 20 x 20 pixels
+        self.color("white")
+        self.penup()
+        self.turtlesize(stretch_wid=5, stretch_len=1)
+        self.goto(position)
 
     def up(self):
-        new_y = self.paddle.ycor() + 20
-        self.paddle.goto(self.paddle.xcor(), new_y)
+        new_y = self.ycor() + 20
+        self.goto(self.xcor(), new_y)
 
     def down(self):
-        new_y = self.paddle.ycor() - 20
-        self.paddle.goto(self.paddle.xcor(), new_y)
+        new_y = self.ycor() - 20
+        self.goto(self.xcor(), new_y)
