@@ -23,7 +23,6 @@ screen.onkey(left_paddle.up, "w")
 screen.onkey(left_paddle.down, "s")
 
 game_is_active = True
-
 while game_is_active:
     # time.sleep(0.1)
     screen.update()
@@ -34,7 +33,13 @@ while game_is_active:
         ball.bounce_y()
 
     # paddle collision detection
-    if ball.distance(right_paddle) < 50 and ball.xcor() > 320 or ball.distance(left_paddle) < 50 or ball.xcor() < -320:
+    if ball.distance(right_paddle) < 50 and ball.xcor() > 320 or ball.distance(left_paddle) < 50 and ball.xcor() < -320:
         ball.bounce_x()
+
+    # paddle misses detection
+    if ball.xcor() > 380:
+        ball.reset_position()
+    if ball.xcor() < -380:
+        ball.reset_position()
 
 screen.exitonclick()
