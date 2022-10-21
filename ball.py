@@ -7,8 +7,9 @@ class Ball(Turtle):
         self.color("white")
         self.shape("circle")
         self.penup()
-        self.x_move = 1.5
-        self.y_move = 1.5
+        self.x_move = 10
+        self.y_move = 10
+        self.ball_speed = 0.1
 
     def movement(self):
         new_x = self.xcor() + self.x_move
@@ -20,7 +21,9 @@ class Ball(Turtle):
 
     def bounce_x(self):
         self.x_move *= -1
+        self.ball_speed *= 0.9  # increase the speed of the ball when hit by a paddle
 
     def reset_position(self):
         self.goto(0, 0)
+        self.ball_speed = 0.1  # reset the speed of the ball when one of the player scored
         self.bounce_x()
