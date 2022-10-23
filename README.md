@@ -76,7 +76,7 @@ Python 3.8 or above is required. You can download the latest version through htt
 
 Use the arrow keys (up, down) and the "W" and "S" keys to control the 2 paddles' movement, respectively.
 
-A ball create on the center and move toward the top right corner initially. The ball will bounce on the top, bottom wall, and paddles. If a player misses the ball, 1 point score will be added to the opppent.
+A ball will be created on the center and move toward the top right corner initially. The ball will bounce on the top wall, the bottom wall, and paddles. If a player misses the ball, 1 point score will be added to the opppent.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
